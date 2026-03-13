@@ -1,0 +1,39 @@
+[
+  {
+    "id": "bread",
+    "material": "bread",
+    "display": {
+      "name": "<green>Delicious bread",
+      "description": [
+        "<yellow>Really tasty!"
+      ],
+      "components": [
+        {
+          "type": "use_cooldown",
+          "value": {
+            "seconds": 5.0,
+            "cooldown_group": "delicious"
+          }
+        },
+        {
+          "type": "consumable",
+          "value": {
+            "consume_seconds": 3.0,
+            "animation": "spyglass",
+            "sound": "entity.arrow.shoot",
+            "has_consume_particles": true,
+            "on_consume_effects": []
+          }
+        },
+        {
+          "type": "use_effects",
+          "value": {
+            "can_sprint": true,
+            "interact_vibrations": true,
+            "speed_multiplier": 1.0
+          }
+        }
+      ]
+    }
+  }
+]
