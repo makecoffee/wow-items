@@ -75,5 +75,4 @@ public final class WowItems {
     public ItemService itemService() {
         return itemService;
     }
-
 }

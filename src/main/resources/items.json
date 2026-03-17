@@ -35,5 +35,22 @@
         }
       ]
     }
+  },
+
+  {
+    "id": "test",
+    "material": "netherite_sword",
+    "display": {
+      "name": "<red>Test sword",
+      "components": [
+        {
+          "type": "swing_animation",
+          "value": {
+            "type": "whack",
+            "duration": 2
+          }
+        }
+      ]
+    }
   }
 ]
