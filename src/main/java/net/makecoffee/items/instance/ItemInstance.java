@@ -1,5 +1,7 @@
 package net.makecoffee.items.instance;
 
+import net.kyori.adventure.nbt.CompoundBinaryTag;
+import net.makecoffee.items.Constants;
 import net.makecoffee.items.data.DataComponentEntry;
 import net.makecoffee.items.data.ItemData;
 import net.makecoffee.items.data.ItemDisplayData;
@@ -19,7 +21,10 @@ public record ItemInstance(ItemData data) {
                 .withCustomName(display.formattedName())
                 .withLore(display.formattedDescription())
                 .withMaxStackSize(data.maxStackSize())
-                .withoutExtraTooltip();
+                .withoutExtraTooltip()
+                .withTag(Constants.ITEM_TAG, CompoundBinaryTag.builder()
+                        .putString(Constants.ITEM_ID_KEY, data.id())
+                        .build());
     }
 
     @SuppressWarnings("unchecked")

@@ -34,15 +34,14 @@ public final class WowItems {
         MinecraftServer server = MinecraftServer.init(new Auth.Online());
         globalEventHandler = MinecraftServer.getGlobalEventHandler();
 
-        configureInstance();
-        configureListeners();
-
         itemRepository = new ItemRepository();
         itemService = new ItemService(itemRepository);
         itemService.loadFromJson();
 
-        MinecraftServer.getCommandManager().register(new ItemCommand(itemRepository, itemService));
+        configureInstance();
+        configureListeners();
 
+        MinecraftServer.getCommandManager().register(new ItemCommand(itemRepository, itemService));
         server.start(DEFAULT_HOST, DEFAULT_PORT);
     }
 
@@ -61,7 +60,7 @@ public final class WowItems {
             player.setGameMode(GameMode.CREATIVE);
         });
 
-        new ItemListener(globalEventHandler, cooldownManager);
+        new ItemListener(globalEventHandler, cooldownManager, itemService);
     }
 
     public CooldownManager cooldownManager() {

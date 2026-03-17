@@ -34,6 +34,10 @@
           }
         }
       ]
+    },
+    "use_message": {
+      "type": "FINISH",
+      "message": "<green>Yup!"
     }
   },
 

@@ -4,6 +4,7 @@ import net.kyori.adventure.text.Component;
 import net.makecoffee.items.data.DataComponentEntry;
 import net.makecoffee.items.data.ItemData;
 import net.makecoffee.items.data.ItemDisplayData;
+import net.makecoffee.items.data.UseMessage;
 import net.makecoffee.items.instance.ItemInstance;
 import net.makecoffee.items.repository.ItemRepository;
 import net.minestom.server.MinecraftServer;
@@ -77,7 +78,8 @@ class ItemServiceTest {
                         .description(Component.text("Line1"), Component.text("Line2"))
                         .component(new DataComponentEntry(DataComponents.DAMAGE, 10))
                         .build(),
-                10
+                10,
+                UseMessage.empty()
         );
 
         ItemData item2 = new ItemData(
@@ -88,7 +90,8 @@ class ItemServiceTest {
                         .description(Component.text("Line1"))
                         .component(new DataComponentEntry(DataComponents.DYED_COLOR, DyeColor.LIME))
                         .build(),
-                0
+                0,
+                UseMessage.empty()
         );
 
         return Stream.of(
