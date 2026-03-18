@@ -2,7 +2,6 @@ package net.makecoffee.items;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
-import com.google.gson.Strictness;
 import net.kyori.adventure.nbt.BinaryTag;
 import net.kyori.adventure.text.Component;
 import net.kyori.adventure.text.minimessage.MiniMessage;
@@ -20,7 +19,6 @@ public final class Constants {
             .registerTypeAdapter(DataComponentEntry.class, DataComponentEntryAdapter.INSTANCE)
             .registerTypeAdapter(Component.class, ComponentAdapter.INSTANCE)
             .setPrettyPrinting()
-            .setStrictness(Strictness.LENIENT)
             .create();
 
     public static final MiniMessage MM = MiniMessage.miniMessage();
